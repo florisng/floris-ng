@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Welcome</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME</button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills">SKILLS</a>
+						  <a href="index.html#exp">PROJECTS</a>
+						  <a href="index.html#contacts">CONTACTS</a>
+						</div>
+					</div>
+					<div class="other_link">
+						<a href="articles.html">
+							<img src="img/article_icon.png" class="icon">
+							ARTICLES
+						</a>
+					</div>
+					<div>
+						<a href="signup.html" class="other_link">
+							<img src="img/signup.png" class="icon">
+							Create an account
+						</a>
+					</div>
+					<div>
+						<a href="profil.html">
+							<img src="img/user_profil.png" class="icon">
+						</a>
+					</div>
+					<div>
+						<a href="signin.html" class="signin">
+							SIGN IN
+						</a>
+					</div>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<a href="articles.html">
+					<img src="img/article_icon.png" class="icon">
+					ARTICLES
+				</a>
+				<a href="signin.html">
+					<img src="img/signin.jpg" class="icon">
+					SIGN IN
+				</a>
+				<a href="signup.html">
+					<img src="img/signup.png" class="icon">
+					SIG UP
+				</a>
+				<a href="profil.html">
+					<img src="img/user_profil.png" class="icon">
+					PROFIL
+				</a>
+			</nav>
+		</div>
+		<div id="present">
+			<div class="welcome_left">
+				<div class="welcome_msg">
+					<span class="title">Welcome</span>
+					<p>
+						<span class="sub_title">In-demand talent on demand</span>
+					</p>
+					<div class="index_btn">
+						<a href="#skills" class="big_btn push_right">GET STARTED</a>
+						<a href="signin.html" class="link">SIGN IN</a>
+					</div>
+				</div>
+			</div>
+			<div class="welcome_right">
+				<img src="img/welcome.png" class="welcome_img">
+			</div>
+		</div>
+		<div class="content">
+			<div id="skills">
+				<h1>Skills</h1>
+				<hr>
+				<div>
+					<img src="img/skills.png" class="side right">
+				</div>
+				<div>
+					<p>
+						<h2><i>Project management</i></h2>
+						<img src="img/checked.png" class="checked">
+						Git & Gihub<br>
+						<img src="img/checked.png" class="checked">
+						Trello<br>
+					</p>
+					<p>
+						<h2><i>Tools</i></h2>
+						<img src="img/checked.png" class="checked">
+						VISUAL STUDIO Code<br>
+						<img src="img/checked.png" class="checked">
+						Google Chrome<br>
+						<img src="img/checked.png" class="checked">
+						Figma
+					</p>
+					<p>
+						<h2><i>Programming</i></h2>
+						<img src="img/checked.png" class="checked">
+						HTML5 & CSS3<br>
+						<img src="img/checked.png" class="checked">
+						JavaScript<br>
+						<img src="img/checked.png" class="checked">
+						Node.js
+					</p>
+					<p>
+						<button onclick="open_query_form()" class="btn">Contact me</button>
+					</p>
+				</div>
+			</div>
+			<div id="exp">
+				<h1>Experience</h1>
+				<div class="sub_title center"><i>Projects already completed</i></div>
+				<hr>
+				<div>
+					<div class="skills">
+						<div>
+							<p>
+								<img src="img/checked.png" class="checked">
+								<i class="word">Medsine</i>
+								<p>
+									A web based software for pharmacies management.
+									<p>
+										Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte.
+									</p>
+									<span class="small_word">Try it for Free</span>
+								</p>
+							</p>
+						</div>
+						<div>
+							<img src="img/medsine.png" class="side">
+						</div>
+					</div>
+					<div class="skills">
+						<div>
+							<p>
+								<img src="img/checked.png" class="checked">
+								<i class="word">GreenWich Store</i>
+								<p>
+									E-commerce - An online shop for (Wines & Fruits).
+									<p>
+										Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte.
+									</p>
+									<span class="small_word">Visit the Website</span>
+								</p>
+							</p>
+						</div>
+						<div>
+							<img src="img/cart.png" class="side">
+						</div>
+					</div>
+					<div class="skills">
+						<div>
+							<p>
+								<img src="img/checked.png" class="checked">
+								<i class="word">Gura</i>
+								<p>
+									A Desktop software for Supermarket.
+									<p>
+										Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte.
+									</p>
+									<span class="small_word">Download for Free</span>
+								</p>
+							</p>
+						</div>
+						<div>
+							<img src="img/market.png" class="side">
+						</div>
+					</div>
+				</div>
+				<p>
+					<button onclick="open_query_form()" class="btn">Contact Me right now</button>
+				</p>
+			</div>
+		</div>
+		<hr>
+		<div class="contact">
+			<div id="contacts">
+				<h1>Contacts</h1>
+				<div>
+					<img src="img/home.png" class="add_call">
+					<img src="img/call.png" class="add_call">
+					<p>
+						<a href="contact.html" class="btn">Ask a question</a>
+					</p>
+				</div>
+				<hr>
+				<div>
+						<h3>Thank you for sharing</h3>
+						<img src="img/lin.png" class="media">
+						<img src="img/github.png" class="media">
+						<img src="img/twi.png" class="media">
+						<img src="img/ig.png" class="media">
+						<img src="img/fb.png" class="media">
+						<img src="img/whtsp.png" class="media">
+				</div>
+				<div>
+					<img src="img/media.png" class="media_big_pic">
+					<h3>Follow me</h3>
+					<img src="img/lin.png" class="media">
+					<img src="img/github.png" class="media">
+					<img src="img/twi.png" class="media">
+					<img src="img/ig.png" class="media">
+					<img src="img/fb.png" class="media">
+					<img src="img/whtsp.png" class="media">
+				</div>
+			</div>
+			<div>
+				<p>
+					<span class="title">Don't miss anything</span>
+					<form>
+						<input type="email" placeholder="E-mail" class="big_field" required>
+						<p>
+							<input type="submit" value="Subscribe" class="btn">
+						</p>
+					</form>
+				</p>
+			</div>
+		</div>
+		<footer>
+			<div class="query" onclick="open_query_form()">
+				Help<hr class="query_hr">
+				Ask a question
+			</div>
+			<div class="query_form">
+				<p>
+					<span class="sous_titre">How can I help?</span>
+				</p>
+				<form action="contact.html">
+						<input type="text" placeholder="Full name" required>
+						<br>
+						<input type="text" placeholder="Company" required>
+						<br>
+						<input type="tel" placeholder="Phone number" required>
+						<br>
+						<input type="email" placeholder="E-mail" required>
+						<br>
+						<input type="text" class="large_field" placeholder="Question here ..." required>
+						<p>
+							<input type="submit" value="SEND" class="reverse_btn">
+							<span class="reverse_link right" onclick="close_query_form()">Close</span>
+						</p>
+				</form>
+			</div>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script type="text/javascript" src="js.js"></script>
+    </body>
+</html>
