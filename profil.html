@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Profil</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME<img src="img/down_home.png" class="very_small push_left"></button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills">SKILLS</a>
+						  <a href="index.html#exp">PROJECTS</a>
+						  <a href="index.html#contacts">CONTACTS</a>
+						</div>
+					</div>
+					<div class="other_link">
+						<a href="articles.html">
+							<img src="img/article_icon.png" class="icon">
+							ARTICLES
+						</a>
+					</div>
+					<div>
+						<a href="signup.html" class="other_link">
+							<img src="img/signup.png" class="icon">
+							Create an account
+						</a>
+					</div>
+					<div>
+						<a href="profil.html">
+							<img src="img/user_profil.png" class="icon">
+						</a>
+					</div>
+					<div>
+						<a href="signin.html" class="signin">
+							SIGN IN
+						</a>
+					</div>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<a href="articles.html">
+					<img src="img/article_icon.png" class="icon">
+					ARTICLES
+				</a>
+				<a href="signin.html">
+					<img src="img/signin.jpg" class="icon">
+					SIGN IN
+				</a>
+				<a href="signup.html">
+					<img src="img/signup.png" class="icon">
+					SIG UP
+				</a>
+				<a href="profil.html">
+					<img src="img/user_profil.png" class="icon">
+					PROFIL
+				</a>
+			</nav>
+		</div>
+		<div class="articles">
+			<div>
+				<img src="img/user_profil.png" class="icon">
+				<span class="title">Personnal information</span>
+				<hr>
+				<div class="skills">
+					<div class="push_left">
+						<img src="img/user_profil.png" class="medium">
+					</div>
+					<div class="pers">
+						<p>
+					<form id="name_form">
+						<table>
+							<tr>
+								<td>First name:</td>
+								<td><input type="text" value="Anna" placeholder="First name" required></td>
+							</tr>
+							<tr>
+								<td>Last name:</td>
+								<td><input type="text" value="Keza" placeholder="Last name" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save" onclick="open_form('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">
+<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+					<form id="email_form">
+						<table>
+							<tr>
+								<td>E-mail:</td>
+								<td><input type="email" value="annakeza@example.ext" placeholder="E-mail" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save">
+<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+					<form id="tel_form">
+						<table>
+							<tr>
+								<td>Phone number:</td>
+								<td><input type="tel" value="+250 78701000" placeholder="Your phone number" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save">
+<span class="close_all_form link" onclick="close_all('#tel_form', '#email_form', '#name_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+					<form id="add_form">
+						<table>
+							<tr>
+								<td>Address:</td>
+								<td><input type="text" value="254 St, Kanombe, Kigali - Rwanda" placeholder="Your address" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save">
+<span class="close_all_form link" onclick="close_all('#add_form', '#email_form', '#tel_form', '#name_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+					<form id="pic_form">
+						<table>
+							<tr>
+								<td>Profil picture:</td>
+								<td><input type="file" placeholder="Your profil picture" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save">
+<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+					<form id="pass_form">
+						<table>
+							<tr>
+								<td>New password:</td>
+								<td><input type="text" value="" placeholder="Your password" required></td>
+							</tr>
+							<tr>
+								<td>Confirm password:</td>
+								<td><input type="text" value="" placeholder="Confirm your password" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+<input type="submit" class="btn" value="Save">
+<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</form>
+				</p>
+						<table>
+							<tr>
+								<td class="sub_title">Anna</td>
+								<td class="sub_title">Keza</td>
+								<td><img src="img/edit.png" class="very_small cursor_pointer" onclick="open_form('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')"></td>
+							</tr>
+							<tr>
+								<td><b>E-mail:</b></td>
+								<td>annakeza@example.ext</td>
+								<td><img src="img/edit.png" class="very_small cursor_pointer" onclick="open_form('#email_form', '#name_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')"></td>
+							</tr>
+							<tr>
+								<td><b>Phone number:</b></td>
+								<td>+250 787001000</td>
+								<td><img src="img/edit.png" class="very_small cursor_pointer" onclick="open_form('#tel_form', '#email_form', '#name_form', '#add_form', '#pic_form', '#pass_form')"></td>
+							</tr>
+							<tr>
+								<td><b>Address:</b></td>
+								<td>254 St, Kanombe, Kigali - Rwanda</td>
+								<td><img src="img/edit.png" class="very_small cursor_pointer" onclick="open_form('#add_form', '#email_form', '#tel_form', '#name_form', '#pic_form', '#pass_form')"></td>
+							</tr>
+						</table>
+						<hr>
+						<span class="link" onclick="open_form('#pic_form', '#email_form', '#tel_form', '#add_form', '#name_form', '#pass_form')">Change Profil Picture</span>
+						<span class="link right" onclick="open_form('#pass_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#name_form')">Change password</span>
+					</div>
+				</div>
+			</div>
+			<div id="admin">
+				<div>
+					<p>
+						<img src="img/settings.png" class="icon">
+						<span class="title">Settings</span>
+						<hr>
+						<b>Reminder: </b>
+						<select>
+							<option>All</option>
+							<option>Only new article</option>
+						</select>
+						<input type="submit" value="Save" class="btn">
+					</p>
+					<p>
+						<span class="title">Don't miss anything</span>
+						<form>
+							<input type="email" placeholder="E-mail" class="big_field" required>
+							<p>
+								<input type="submit" value="Subscribe" class="btn">
+							</p>
+						</form>
+					</p>
+				</div>
+				<div>
+					<img src="img/admin.png" class="icon">
+					<span class="title">Admin space</span>
+					<hr>
+					<p><b>Number of entries:</b>701</p>
+					<p>
+						<span class="sous_titre"><i>Questions (2 unread)</i></span>
+						<span class="link">Mark as read</span>
+					</p>
+					<div class="unread">
+						<p>
+							<b>Bertrand Nkurunziza</b>: I would like you to design me a website, how much for one???
+							<span class="small_word">Just posted</span>
+						</p>
+						<p>
+							<b>Allen Ndahiro</b>: I'm interesting in your Soft about pharmacie, i need more description.
+							<span class="small_word">31min</span>
+						</p>
+					</div>
+					<div>
+						<p>
+							<img src="img/checked.png" class="checked">
+							<b>Yvan Murerwa</b>: Hey, that's a great idea bro. How did you do that?
+							<span class="small_word">1d 55min</span>
+						</p>
+						<p>
+							<img src="img/checked.png" class="checked">
+							<b>Frank Nitunga</b>: Your design is perfect buy you need to improve the way a visitor interact with the system. Keep it up!!!
+							<span class="small_word">2w</span>
+						</p>
+						<p>
+							<img src="img/checked.png" class="checked">
+							<b>Mero Camaro</b>: Hey Flo, how are you. Look i'd like to meet you, when will you be available?
+							<span class="small_word">June 22th, 2020</span>
+						</p>
+						<p>
+							<img src="img/checked.png" class="checked">
+							<b>Gael Muremyi</b>: Pretty nice website!!!
+							<span class="small_word">April 17th, 2020</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="query" onclick="open_query_form()">
+				Help<hr class="query_hr">
+				Ask a question
+			</div>
+			<div class="query_form">
+				<p>
+					<h3 class="sous_titre">How can I help?</h3>
+				</p>
+				<form action="contact.html">
+						<input type="text" placeholder="Full name" required>
+						<br>
+						<input type="text" placeholder="Company" required>
+						<br>
+						<input type="tel" placeholder="Phone number" required>
+						<br>
+						<input type="email" placeholder="E-mail" required>
+						<br>
+						<input type="text" class="large_field" placeholder="Question here ..." required>
+						<p>
+							<input type="submit" value="SEND" class="reverse_btn">
+							<span class="reverse_link right" onclick="close_query_form()">Close</span>
+						</p>
+				</form>
+			</div>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script type="text/javascript" src="js.js"></script>
+    </body>
+</html>
