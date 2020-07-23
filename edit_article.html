@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Article</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME</button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills">SKILLS</a>
+						  <a href="index.html#exp">PROJECTS</a>
+						  <a href="index.html#contacts">CONTACTS</a>
+						</div>
+					</div>
+					<div class="other_link">
+						<a href="articles.html">
+							<img src="img/article_icon.png" class="icon">
+							ARTICLES
+						</a>
+					</div>
+					<div>
+						<a href="signup.html" class="other_link">
+							<img src="img/signup.png" class="icon">
+							Create an account
+						</a>
+					</div>
+					<div>
+						<a href="profil.html">
+							<img src="img/user_profil.png" class="icon">
+						</a>
+					</div>
+					<div>
+						<a href="signin.html" class="signin">
+							SIGN IN
+						</a>
+					</div>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<a href="articles.html">
+					<img src="img/article_icon.png" class="icon">
+					ARTICLES
+				</a>
+				<a href="signin.html">
+					<img src="img/signin.jpg" class="icon">
+					SIGN IN
+				</a>
+				<a href="signup.html">
+					<img src="img/signup.png" class="icon">
+					SIG UP
+				</a>
+				<a href="profil.html">
+					<img src="img/user_profil.png" class="icon">
+					PROFIL
+				</a>
+			</nav>
+		</div>
+		<div class="articles">
+            <p>
+                <img src="img/article_icon.png" class="big_icon">
+                <span class="title">Leardership in Africa</span>
+                <img src="img/del.png" onclick="open_delete_article()" class="icon cursor_pointer hover_action push_left">
+                <div class="delete_article">
+                    Do you real want to delete this article?
+                    <p>
+                        <button class="red_btn">Delete</button>
+                        <span onclick="close_delete_article()" class="link">Cancel</span>
+                    </p>
+                </div>
+            </p>
+             <div>
+                <form>
+                    <textarea rows="20" cols="40" placeholder="Content ..." required>
+						The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.</textarea>
+                    <p>
+                        <input type="submit" class="btn" value="Save">
+                    </p>
+				</form>
+            </div>
+        </div>
+		<footer>
+			<div class="query" onclick="open_query_form()">
+				Help<hr class="query_hr">
+				Ask a question
+			</div>
+			<div class="query_form">
+				<p>
+					<span class="sous_titre">How can I help?</span>
+				</p>
+				<form action="contact.html">
+						<input type="text" placeholder="Full name" required>
+						<br>
+						<input type="text" placeholder="Company" required>
+						<br>
+						<input type="tel" placeholder="Phone number" required>
+						<br>
+						<input type="email" placeholder="E-mail" required>
+						<br>
+						<input type="text" class="large_field" placeholder="Question here ..." required>
+						<p>
+							<input type="submit" value="SEND" class="reverse_btn">
+							<span class="reverse_link right" onclick="close_query_form()">Close</span>
+						</p>
+				</form>
+			</div>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script type="text/javascript" src="js.js"></script>
+    </body>
+</html>
