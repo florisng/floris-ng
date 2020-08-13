@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Floris Ng - Article</title>
+		<title>Floris Ng - Articles</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
@@ -16,35 +16,27 @@
 				<nav>
 					<div class="dropdown">
 						<img src="img/home_icon.jpg" class="icon">
-						<button class="dropbtn">HOME</button>
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
 						<div class="dropdown-content">
-						  <a href="index.html#skills">SKILLS</a>
-						  <a href="index.html#exp">PROJECTS</a>
-						  <a href="index.html#contacts">CONTACTS</a>
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
 						</div>
 					</div>
-					<div class="other_link">
-						<a href="articles.html">
-							<img src="img/article_icon.png" class="icon">
-							ARTICLES
-						</a>
-					</div>
-					<div>
-						<a href="signup.html" class="other_link">
-							<img src="img/signup.png" class="icon">
-							Create an account
-						</a>
-					</div>
-					<div>
-						<a href="profil.html">
-							<img src="img/user_profil.png" class="icon">
-						</a>
-					</div>
-					<div>
-						<a href="signin.html" class="signin">
-							SIGN IN
-						</a>
-					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='icon'></a></div>");
+							document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+							if(sessionStorage.getItem("type") === "admin") {
+								document.write("<div title='Administrator'><a href='admin.html' class='other_link'><img src='img/admin.png' class='icon'></a></div>");
+							}
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
 				</nav>
 			</div>
 			<div class="open_close_space">
@@ -74,47 +66,26 @@
 						CONTACT
 					</a>
 				</div>
-				<a href="articles.html">
-					<img src="img/article_icon.png" class="icon">
-					ARTICLES
-				</a>
-				<a href="signin.html">
-					<img src="img/signin.jpg" class="icon">
-					SIGN IN
-				</a>
-				<a href="signup.html">
-					<img src="img/signup.png" class="icon">
-					SIG UP
-				</a>
-				<a href="profil.html">
-					<img src="img/user_profil.png" class="icon">
-					PROFIL
-				</a>
+				<script>
+					document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='icon'>My Profil</a></div>");
+						document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+					}
+					else{
+						document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+						document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+					}
+				</script>
 			</nav>
 		</div>
 		<div class="articles">
-            <p>
-                <img src="img/article_icon.png" class="big_icon">
-                <span class="title">Leardership in Africa</span>
-                <img src="img/del.png" onclick="open_delete_article()" class="icon cursor_pointer hover_action push_left">
-                <div class="delete_article">
-                    Do you real want to delete this article?
-                    <p>
-                        <button class="red_btn">Delete</button>
-                        <span onclick="close_delete_article()" class="link">Cancel</span>
-                    </p>
-                </div>
-            </p>
-             <div>
-                <form>
-                    <textarea rows="20" cols="40" placeholder="Content ..." required>
-						The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.</textarea>
-                    <p>
-                        <input type="submit" class="btn" value="Save">
-                    </p>
-				</form>
-            </div>
-        </div>
+			<div class="list_of_articles"></div>
+			<div id="signedinup">
+				<img src="img/ok.gif" class="updated">
+				<span class="sub_title">Updated</span>
+			</div>
+		</div>
 		<footer>
 			<div class="query" onclick="open_query_form()">
 				Help<hr class="query_hr">
@@ -144,6 +115,80 @@
 				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
 			</div>
 		</footer>
-		<script type="text/javascript" src="js.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+				<script>
+					// Your web app's Firebase configuration
+					var firebaseConfig = {
+						apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+						authDomain: "floris-ng.firebaseapp.com",
+						databaseURL: "https://floris-ng.firebaseio.com",
+						projectId: "floris-ng",
+						storageBucket: "floris-ng.appspot.com",
+						messagingSenderId: "667336396068",
+						appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+						measurementId: "G-G1MQMC21Y7"
+					};
+					// Initialize Firebase
+					firebase.initializeApp(firebaseConfig);
+					firebase.analytics();
+					
+						// Get ID from URL GET
+						const queryString = window.location.search;
+						const urlParams = new URLSearchParams(queryString);
+						const id = urlParams.get('id');
+
+						// Retrieve user information
+						let ref = firebase.database().ref("articles");
+						ref.on("value", function gotData(data) {
+							let d = data.val();
+							let keys = Object.keys(d);
+							let i = 0;
+							let found = false;
+							while(i < keys.length && found === false) {
+								let k = keys[i];
+								let saved_id = k;
+								if(saved_id == id) {
+									found = true;
+									let str = "<div><p>Title: <input type='text' placeholder='Title of the article' class='big_field' id='title' value='" + d[k].title + "'></p><textarea id='content' placeholder='Content of the article ...'>" + d[k].content + "</textarea><p><input type='submit' class='btn' onclick='update_article(" + id + ")' value='Update'><span class='cursor_pointer right' onclick='del_article()'><img src='img/del.png' class='icon'><span class='link'>Delete</span></span></p></div>";
+									$(".list_of_articles").append(str);
+								}
+								i++;
+							}
+						});
+						
+						function update_article(id) {
+							let title = document.querySelector("#title").value;
+							let content = document.querySelector("#content").value;
+							let data = {
+								title: document.querySelector("#title").value,
+								content: document.querySelector("#content").value,
+								date: daterEn()
+							}
+							firebase.database().ref('articles/' + id).set(data);
+
+							document.querySelector(".list_of_articles").style.display = "none";
+							document.querySelector("#signedinup").style.display = "block";
+
+							setTimeout(function() {
+								window.location = "articles.html";
+							}, 1200);
+						}
+				</script>
+				 <script>
+					// Delete a message
+					function del_article() {
+						// Get ID from URL GET
+						const queryString = window.location.search;
+						const urlParams = new URLSearchParams(queryString);
+						const id = urlParams.get('id');
+
+						firebase.database().ref("articles/" + id).remove();
+						window.location = "articles.html";
+					}
+				</script>
+				<script type="text/javascript" src="js.js"></script>
+				<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     </body>
 </html>

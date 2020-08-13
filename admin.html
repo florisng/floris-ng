@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Profil</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
+						</div>
+					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='userPro profil_pic'></a></div>");
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<script>
+					document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='icon'>My Profil</a></div>");
+						document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+					}
+					else{
+						document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+						document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+					}
+				</script>
+			</nav>
+		</div>
+		<div class="articles">
+			<img src="img/admin.png" class="moyen">
+			<span class="title">Admin Page | </span><a href="users.html" class="link">Users</a>
+			<hr>
+			<div>
+                <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+                <script>
+                    // Your web app's Firebase configuration
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+                        authDomain: "floris-ng.firebaseapp.com",
+                        databaseURL: "https://floris-ng.firebaseio.com",
+                        projectId: "floris-ng",
+                        storageBucket: "floris-ng.appspot.com",
+                        messagingSenderId: "667336396068",
+                        appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+                        measurementId: "G-G1MQMC21Y7"
+                    };
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.analytics();
+                    
+                        // Get ID from URL GET
+                        const queryString = window.location.search;
+                        const urlParams = new URLSearchParams(queryString);
+                        const id = urlParams.get('id');
+
+						
+							// Retrieve user information
+							let ref = firebase.database().ref("messages");
+							ref.on("value", function gotData(data) {
+								let d = data.val();
+								let keys = Object.keys(d);
+								let i = 0;
+								let found = false;
+								while(i < keys.length) {
+										let k = keys[i];
+										let saved_firstname = d[k].firstname;
+										let saved_lastname = d[k].lastname;
+										let saved_email = d[k].email;
+										let saved_message = d[k].message;
+										let saved_phone = d[k].phone;
+										let saved_date = d[k].date;
+		$(".list_of_users").append("<p><b><img src='img/checked.png' class='icon'>" + saved_firstname + " " + saved_lastname + "</b> (E-mail: " + saved_email + " - Phone: " + saved_phone + ") <span class='cursor_pointer right' onclick='del_msg(" + k + ")'><img src='img/del.png' class='icon'><span class='link'>Delete</span></span></p>");
+										$(".list_of_users").append("<p>" + saved_message + "</p>");
+										$(".list_of_users").append("<p>Posted on: " + saved_date + "</p>");
+										$(".list_of_users").append("<hr>");
+										i++;
+								}
+							});
+                </script>
+                <p><h2>Messages</h2></p>
+                <div class='list_of_users'></div>
+            </div>
+		</div>
+		<footer>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script>
+			if(sessionStorage.getItem("status") !== "connected" || sessionStorage.getItem("type") !== "admin") {
+				window.location.replace("forbidden.html");
+			}
+        </script>
+        <script>
+            // Delete a message
+            function del_msg(id) {
+				firebase.database().ref("messages/" + id).remove();
+				window.location = "";
+            }
+        </script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    </body>
+</html>

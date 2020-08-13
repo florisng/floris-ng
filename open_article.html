@@ -16,35 +16,23 @@
 				<nav>
 					<div class="dropdown">
 						<img src="img/home_icon.jpg" class="icon">
-						<button class="dropbtn">HOME</button>
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
 						<div class="dropdown-content">
-						  <a href="index.html#skills">SKILLS</a>
-						  <a href="index.html#exp">PROJECTS</a>
-						  <a href="index.html#contacts">CONTACTS</a>
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
 						</div>
 					</div>
-					<div class="other_link">
-						<a href="articles.html">
-							<img src="img/article_icon.png" class="icon">
-							ARTICLES
-						</a>
-					</div>
-					<div>
-						<a href="signup.html" class="other_link">
-							<img src="img/signup.png" class="icon">
-							Create an account
-						</a>
-					</div>
-					<div>
-						<a href="profil.html">
-							<img src="img/user_profil.png" class="icon">
-						</a>
-					</div>
-					<div>
-						<a href="signin.html" class="signin">
-							SIGN IN
-						</a>
-					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='userPro profil_pic'></a></div>");
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
 				</nav>
 			</div>
 			<div class="open_close_space">
@@ -74,93 +62,33 @@
 						CONTACT
 					</a>
 				</div>
-				<a href="articles.html">
-					<img src="img/article_icon.png" class="icon">
-					ARTICLES
-				</a>
-				<a href="signin.html">
-					<img src="img/signin.jpg" class="icon">
-					SIGN IN
-				</a>
-				<a href="signup.html">
-					<img src="img/signup.png" class="icon">
-					SIG UP
-				</a>
-				<a href="profil.html">
-					<img src="img/user_profil.png" class="icon">
-					PROFIL
-				</a>
+				<script>
+					document.write("<a href='articles.html'><img src='img/article_icon.png' class='icon'>ARTICLES</a>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<a href='profil.html'><img src='img/user_profil.png' class='icon'>Profil</a>");
+						document.write("<a href='logout.html'><img src='img/logout.png' class='icon'>Logout</a>");
+					}
+					else{
+						document.write("<a href='signup.html'><img src='img/signup.png' class='icon'>Create an account</a>");
+						document.write("<a href='signin.html'>SIGN IN</a>");
+					}
+				</script>
 			</nav>
 		</div>
 		<div class="articles">
-            <p>
-                <img src="img/article_icon.png" class="big_icon">
-                <span class="title">Leardership in Africa</span>
-			</p>
-			<hr>
-             <div class="article_content">
-				<p>
-					<p>
-						<span class="sous_titre push_left">- Ideology</span>
-					</p>
-					The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.
-				</p>
-				<p>
-					<p>
-						<span class="sous_titre push_left">- Studies</span>
-					</p>
-					The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.
-				</p>
-				<p>
-					<p>
-						<span class="sous_titre push_left">- Precautions</span>
-					</p>
-					<p>
-						The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.
-					</p>
-						The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.
-					<p>
-						The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum. The lorem ipsum is, in printing, a series of meaningless words used provisionally to calibrate a layout, the final text replacing the false text as soon as it is ready or when the layout is completed. Usually, a false Latin text is used, Lorem ipsum or Lipsum.
-					</p>
-				</p>
-			</div>
-			<div>
-				<p>
-					<img src="img/like.png" class="icon cursor_pointer hover_action">77
-					<img src="img/comment_icon.png" onclick="open_comment_form()" class="icon">121
-				</p>
-			</div>
-			<div>
-				<p>
-					<form>
-						<input type="text" placeholder="Add your comment">
-						<input type="submit" class="btn" value="Post">
-					</form>
-				</p>
-			</div>
-			<div>
-				<p>
-					<b>Bertrand Nkurunziza</b>: Very interesting !!!
-					<span class="small_word">Just posted</span>
-				</p>
-				<p>
-					<b>Allen Ndahiro</b>: I'm getting started in Leardership stadies, it's awesome.
-					<span class="small_word">46min</span>
-				</p>
-			</div>
-			<hr>
-			<div>
-				<p>
-					<span class="title">Don't miss anything</span>
-					<form>
-						<input type="email" placeholder="E-mail" class="big_field" required>
-						<p>
-							<input type="submit" value="Subscribe" class="btn">
-						</p>
-					</form>
-				</p>
-			</div>
-        </div>
+			<div class="list_of_articles"></div>
+			<script>
+				if(sessionStorage.getItem("status") === "connected") {
+	document.write("<input id='comment' type='text' placeholder='Your comment here ...'><button onclick='comment()' class='btn push_left'>Post</button>");
+				}
+				else{
+					document.write("Get connected to comment ");
+					document.write("<a href='signin.html' class='btn'>Sign In</a>");
+				}
+			</script>
+			<div id="nbr_comments"></div>
+			<div class="list_of_comments"></div>
+		</div>
 		<footer>
 			<div class="query" onclick="open_query_form()">
 				Help<hr class="query_hr">
@@ -190,6 +118,180 @@
 				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
 			</div>
 		</footer>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+				authDomain: "floris-ng.firebaseapp.com",
+				databaseURL: "https://floris-ng.firebaseio.com",
+				projectId: "floris-ng",
+				storageBucket: "floris-ng.appspot.com",
+				messagingSenderId: "667336396068",
+				appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+				measurementId: "G-G1MQMC21Y7"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+			
+				// Get ID from URL GET
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				const id = urlParams.get('id');
+
+				// Retrieve user information
+				let ref = firebase.database().ref("articles");
+				ref.on("value", function gotData(data) {
+					let d = data.val();
+					let keys = Object.keys(d);
+					let i = 0;
+					let found = false;
+					while(i < keys.length && found === false) {
+						let k = keys[i];
+						let saved_id = k;
+						if(saved_id == id) {
+							found = true;
+							let saved_title = d[k].title;
+							let saved_likes = d[k].likes;
+							let saved_content = d[k].content;
+							let saved_date = d[k].date;
+							let saved_comments = d[k].comments;
+							$(".list_of_articles").append("<p><span class='title'>" + saved_title + "</p>");
+							$(".list_of_articles").append("<p>" + saved_content + "</p>");
+							$(".list_of_articles").append("<p>");
+							$(".list_of_articles").append("<img src='img/like.png' class='icon cursor_pointer' onclick='like(" + saved_id + ")'>" + saved_likes);
+							$(".list_of_articles").append("<img src='img/comment.jpg' class='icon push_left'>" + saved_comments);
+							$(".list_of_articles").append("</p>");
+						}
+						i++;
+					}
+				});
+
+				// Get ID from URL GET
+				const qs = window.location.search;
+				const up = new URLSearchParams(qs);
+				const id_of_the_srticle = up.get('id');
+
+				
+				document.querySelector("#nbr_comments").innerHTML = "<h2>Comments</h2>";
+				// Retrieve user information
+				let articles_ref = firebase.database().ref("comments");
+				articles_ref.on("value", function gotData(data) {
+					let d = data.val();
+					let keys = Object.keys(d);
+					let i = 0;
+					while(i < keys.length) {
+						let k = keys[i];
+						let id_article = d[k].id_article;
+						if(id_article == id) {
+							$(".list_of_comments").append("<p>");
+							$(".list_of_comments").append("<img src='img/checked.png' class='icon push_right'><b>" + d[k].firstname + " " + d[k].lastname +" </b>: ");
+							$(".list_of_comments").append(d[k].comment + " - <b>" + d[k].date + "</b>");
+							$(".list_of_comments").append("</p>");
+							$(".list_of_comments").append("<hr>");
+						}
+						i++;
+					}
+				});
+
+				// Like an article
+			function like (id) {
+						// Retrieve user information
+						let like_nbr = 0;
+						let content = 0;
+						let date = 0;
+						let comments = "";
+						let ref = firebase.database().ref("articles");
+						ref.on("value", function gotData(data) {
+							let d = data.val();
+							let keys = Object.keys(d);
+							let i = 0;
+							let found = false;
+							while(i < keys.length && found === false) {
+								let k = keys[i];
+								let saved_id = k;
+								if(saved_id == id) {
+									found = true;
+									comments = d[k].comments;
+									content = d[k].content;
+									date = d[k].date;
+									like_nbr = d[k].likes + 1;
+									title = d[k].title;
+								}
+								i++;
+							}
+						});
+
+						let data = {
+							comments: comments,
+							content: content,
+							date: date,
+							likes: like_nbr,
+							title: title
+						}
+						firebase.database().ref('articles/' + id).set(data);
+						window.location = "";
+				}
+
+				// Save a comment
+				function comment () {
+					// Get ID from URL GET
+					const queryString = window.location.search;
+					const urlParams = new URLSearchParams(queryString);
+					const id = urlParams.get('id');
+
+											let ref = firebase.database().ref("comments");
+                                            let data = {
+												id_article: id,
+												firstname: sessionStorage.getItem("firstname"),
+												lastname: sessionStorage.getItem("lastname"),
+												date: daterEn(),
+												comment: document.querySelector("#comment").value
+                                            }
+											ref.push(data);
+
+						// Retrieve user information
+						let like_nbr = 0;
+						let content = 0;
+						let date = 0;
+						let comments = "";
+						let new_ref = firebase.database().ref("articles");
+						new_ref.on("value", function gotData(data) {
+							let d = data.val();
+							let keys = Object.keys(d);
+							let i = 0;
+							let found = false;
+							while(i < keys.length && found === false) {
+								let k = keys[i];
+								let saved_id = k;
+								if(saved_id == id) {
+									found = true;
+									comments = d[k].comments + 1;
+									content = d[k].content;
+									date = d[k].date;
+									like_nbr = d[k].likes;
+									title = d[k].title;
+								}
+								i++;
+							}
+						});
+
+						let new_data = {
+							comments: comments,
+							content: content,
+							date: date,
+							likes: like_nbr,
+							title: title
+						}
+						firebase.database().ref('articles/' + id).set(new_data);
+
+						window.location = "";
+				}
+		</script>
 		<script type="text/javascript" src="js.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     </body>
 </html>

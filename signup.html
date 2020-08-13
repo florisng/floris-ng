@@ -16,35 +16,23 @@
 				<nav>
 					<div class="dropdown">
 						<img src="img/home_icon.jpg" class="icon">
-						<button class="dropbtn">HOME</button>
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
 						<div class="dropdown-content">
-						  <a href="index.html#skills">SKILLS</a>
-						  <a href="index.html#exp">PROJECTS</a>
-						  <a href="index.html#contacts">CONTACTS</a>
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
 						</div>
 					</div>
-					<div>
-						<a href="articles.html" class="other_link">
-							<img src="img/article_icon.png" class="icon">
-							ARTICLES
-						</a>
-					</div>
-					<div>
-						<a href="signup.html" class="other_link">
-							<img src="img/signup.png" class="icon">
-							Create an account
-						</a>
-					</div>
-					<div>
-						<a href="profil.html">
-							<img src="img/user_profil.png" class="icon">
-						</a>
-					</div>
-					<div>
-						<a href="signin.html" class="signin">
-							SIGN IN
-						</a>
-					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='userPro profil_pic'></a></div>");
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
 				</nav>
 			</div>
 			<div class="open_close_space">
@@ -74,51 +62,51 @@
 						CONTACT
 					</a>
 				</div>
-				<a href="articles.html">
-					<img src="img/article_icon.png" class="icon">
-					ARTICLES
-				</a>
-				<a href="signin.html">
-					<img src="img/signin.jpg" class="icon">
-					SIGN IN
-				</a>
-				<a href="signup.html">
-					<img src="img/signup.png" class="icon">
-					SIG UP
-				</a>
-				<a href="profil.html">
-					<img src="img/user_profil.png" class="icon">
-					PROFIL
-				</a>
+				<script>
+					document.write("<a href='articles.html'><img src='img/article_icon.png' class='icon'>ARTICLES</a>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<a href='profil.html'><img src='img/user_profil.png' class='icon'>Profil</a>");
+						document.write("<a href='logout.html'><img src='img/logout.png' class='icon'>Logout</a>");
+					}
+					else{
+						document.write("<a href='signup.html'><img src='img/signup.png' class='icon'>Create an account</a>");
+						document.write("<a href='signin.html'>SIGN IN</a>");
+					}
+				</script>
 			</nav>
 		</div>
 		<div class="sign">
             <div class="skills">
                     <div>
                         <img src="img/sign.png" class="signin_img">
-                    </div>
-                    <div>
-                            <p>
-                                <span class="title">Sign Up | </span>
-                                <a href="signin.html" class="link">Sign In</a>
-                                <hr>
-                            </p>
-                            <form action="index.html">
-                                <input type="text" placeholder="First name" required>
-								<input type="text" placeholder="Last name" required>
-								<p>
-									<input type="text" placeholder="Username" required>
-                               		<input type="email" placeholder="E-mail" required>
-								</p>
-                                <input type="password" placeholder="Password" required>
-								<input type="password" placeholder="Confirm password" required>
-								<p>
-									<input type="submit" value="Sign Up" class="btn">
-								</p>
-                            </form>
+					</div>
+                    <div id="signinup">
+                        <p>
+                            <span class="title">Sign Up | </span>
+                            <a href="signin.html" class="link">Sign In</a>
                             <hr>
-                            <img src="img/fb_login.png" class="fb_login">
-                    </div>
+						</p>
+						<p>
+							<div id="errorMsg"></div>
+						</p>
+						<p>
+							<input type="text" placeholder="First name" id="firstname">
+							<input type="text" placeholder="Last name" id="lastname">
+							<p>
+								<input type="text" placeholder="Phone number" id="phone">
+								<input type="email" placeholder="E-mail" id="email">
+							</p>
+							<input type="text" placeholder="Password" id="password">
+							<input type="text" placeholder="Confirm password" id="pass_confirm">
+							<p>
+								<button onclick="signup()" class="btn">Sign Up</button>
+							</p>
+						</p>
+					</div>
+					<div id="signedinup">
+						<h1 class="sub_title">WELCOME</h1>
+						<img src="img/ok.gif" class="ok_gif">
+					</div>
             </div>
         </div>
 		<footer>
@@ -150,6 +138,40 @@
 				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
 			</div>
 		</footer>
-		<script type="text/javascript" src="js.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+				authDomain: "floris-ng.firebaseapp.com",
+				databaseURL: "https://floris-ng.firebaseio.com",
+				projectId: "floris-ng",
+				storageBucket: "floris-ng.appspot.com",
+				messagingSenderId: "667336396068",
+				appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+				measurementId: "G-G1MQMC21Y7"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+		</script>
+		<script src="signup.js"></script>
+		<script src="js.js"></script>
+		<script>
+			// Get user geolocalisation
+			if(navigator.geolocation) {     
+				navigator.geolocation.getCurrentPosition(function(position) {
+					let lat = position.coords.latitude;
+					let long = position.coords.longitude;
+					sessionStorage.setItem("lat", lat);
+					sessionStorage.setItem("long", long);
+				});
+			}
+			else {
+				console.log("Oops !!! Your browser doesn't support geolocalisation !!!")
+			}
+		</script>
     </body>
 </html>
