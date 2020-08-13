@@ -1,3 +1,21 @@
+function daterEn() {
+    let d = new Date();
+    let date = d.getDate();
+    let month = d.getMonth();
+    let year = d.getFullYear();
+    let hour = d.getHours();
+    let min = d.getMinutes();
+    let str_date =  date + "/" + month + "/" + year + " - " + hour + ":" + min;
+    return str_date;
+}
+function showPassword() {
+    var field = document.querySelector("#password");
+    if (field.type === "password") {
+        field.type = "text";
+    } else {
+        field.type = "password";
+    }
+}
 function open_menu() {
     document.querySelector(".close_menu_icon").style.display = "block";
     document.querySelector(".open_menu_icon").style.display = "none";
@@ -41,6 +59,7 @@ function close_all(one, two, three, four, five, six) {
     document.querySelector(four).style.display = "none";
     document.querySelector(five).style.display = "none";
     document.querySelector(six).style.display = "none";
+    document.querySelector("#errorMsg").style.display = "none";
 }
 function open_query_form() {
     document.querySelector(".query").style.display = "none";
