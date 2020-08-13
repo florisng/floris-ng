@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Profil</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
+						</div>
+					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='userPro profil_pic'></a></div>");
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<script>
+					document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='icon'>My Profil</a></div>");
+						document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+					}
+					else{
+						document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+						document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+					}
+				</script>
+			</nav>
+		</div>
+		<div class="articles">
+			<img src="img/user_profil.png" class="icon">
+			<span class="title">Personnal information | </span>
+			<a href="logout.html"><img src="img/logout.png" class="push_left icon right"></a></script>
+			<script>
+				if(sessionStorage.getItem("status") === "connected") {
+					document.write("<a href='admin.html' title='Take me to the Admin page' class='link'><img src='img/admin.png' class='icon'>Admin</a>");
+				}
+			</script>
+			<hr>
+			<div class="skills">
+				<div class="push_left">
+					<img src="img/user_profil.png" class="push_right my_profil medium">
+				</div>
+				<div class="pers">
+					<p>
+						<div id="errorMsg"></div>
+					</p>
+					<div id="name_form">
+						<table>
+							<tr>
+								<td>First name:</td>
+								<td><input type="text" id="firstname" placeholder="First name"></td>
+							</tr>
+							<tr>
+								<td>Last name:</td>
+								<td><input type="text" id="lastname" placeholder="Last name" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+	<button class="btn" onclick="saveName()">Save</button>
+	<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div id="email_form">
+						<table>
+							<tr>
+								<td>E-mail:</td>
+								<td><input id="email" type="email" placeholder="E-mail"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+	<button class="btn" onclick="saveEmail()">Save</button>
+	<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div id="tel_form">
+						<table>
+							<tr>
+								<td>Phone number:</td>
+								<td><input id="phone" type="tel" placeholder="Your phone number"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+	<button class="btn" onclick="savePhone()">Save</button>
+	<span class="close_all_form link" onclick="close_all('#tel_form', '#email_form', '#name_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div id="add_form">
+						<table>
+							<tr>
+								<td>Address:</td>
+								<td><input id="add" type="text" placeholder="Your address" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+	<button class="btn" onclick="saveAdd()">Save</button>
+	<span class="close_all_form link" onclick="close_all('#add_form', '#email_form', '#tel_form', '#name_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div id="pic_form">
+						<table>
+							<tr>
+								<td>Profil picture:</td>
+								<td>
+				<input type="file" placeholder="Your profil picture" id="file" required>
+				<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div id="pass_form">
+						<table>
+							<tr>
+								<td>New password:</td>
+								<td><input id="pass" type="text" value="" placeholder="Your password" required></td>
+							</tr>
+							<tr>
+								<td>Confirm password:</td>
+								<td><input id="confirm_pass" type="text" value="" placeholder="Confirm your password" required></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+	<button class="btn" onclick="savePass()">Save</button>
+	<span class="close_all_form link" onclick="close_all('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')">Cancel</span>
+								</td>
+							</tr>
+						</table>
+						<hr>
+					</div>
+					<div>
+						<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+						<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+						<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+						<script>
+							// Your web app's Firebase configuration
+							var firebaseConfig = {
+								apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+								authDomain: "floris-ng.firebaseapp.com",
+								databaseURL: "https://floris-ng.firebaseio.com",
+								projectId: "floris-ng",
+								storageBucket: "floris-ng.appspot.com",
+								messagingSenderId: "667336396068",
+								appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+								measurementId: "G-G1MQMC21Y7"
+							};
+							// Initialize Firebase
+							firebase.initializeApp(firebaseConfig);
+							firebase.analytics();
+				
+				
+								// Retrieve user information
+								let ref = firebase.database().ref("users");
+								ref.on("value", function gotData(data) {
+									let d = data.val();
+									let keys = Object.keys(d);
+									let i = 0;
+									let found = false;
+									$(".user_details").append("<table>");
+									while(i < keys.length && found === false) {
+										let k = keys[i];
+										let saved_email = d[k].email;
+										if(saved_email == sessionStorage.getItem("email")) {
+											found = true;
+											let saved_firstname = d[k].firstname;
+											let saved_lastname = d[k].lastname;
+											let saved_phone = d[k].phone;
+											let saved_address = d[k].address;
+											$(".user_details").append("<tr>");
+												$(".user_details").append("<td class='sub_title'>" + saved_firstname + "</td>");
+												$(".user_details").append("<td class='sub_title'>" + saved_lastname + "</td>");
+											$(".user_details").append("</tr>");
+											$(".user_details").append("<tr>");
+												$(".user_details").append("<td>E-mail: </td>");
+												$(".user_details").append("<td>" + saved_email + "</td>");
+											$(".user_details").append("</tr>");
+											$(".user_details").append("<tr>");
+												$(".user_details").append("<td>Phone: </td>");
+												$(".user_details").append("<td>" + saved_phone + "</td>");
+											$(".user_details").append("</tr>");
+											$(".user_details").append("<tr>");
+												$(".user_details").append("<td>Address: </td>");
+												$(".user_details").append("<td>" + saved_address + "</td>");
+											$(".user_details").append("</tr>");
+										}
+										i++;
+									}
+									$(".user_details").append("</table>");
+								});
+						</script>
+					</div>
+					<div id="table_infos_user">
+						<div class="user_details"></div>
+					</div>
+					<hr>
+					<div id="edit_btns">
+						<span onclick="open_form('#name_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')" class="cursor_pointer">
+							<img src="img/edit.png">
+							<span class="push_right small_word">Name</span>
+						</span>
+						<span onclick="open_form('#email_form', '#name_form', '#tel_form', '#add_form', '#pic_form', '#pass_form')" class="cursor_pointer">
+							<img src="img/edit.png">
+							<span class="push_right small_word">E-mail</span>
+						</span>
+						<span onclick="open_form('#tel_form', '#email_form', '#name_form', '#add_form', '#pic_form', '#pass_form')" class="cursor_pointer">
+							<img src="img/edit.png">
+							<span class="push_right small_word">Phone</span>
+						</span>
+						<span onclick="open_form('#add_form', '#email_form', '#tel_form', '#name_form', '#pic_form', '#pass_form')" class="cursor_pointer">
+							<img src="img/edit.png">
+							<span class="push_right small_word">Address</span>
+						</span>
+					</div>
+					<hr>
+					<div>
+						<p>
+							<span class="link" onclick="open_form('#pic_form', '#email_form', '#tel_form', '#add_form', '#name_form', '#pass_form')">Profil Picture</span>
+							<span class="link right" onclick="open_form('#pass_form', '#email_form', '#tel_form', '#add_form', '#pic_form', '#name_form')">Change password</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<p>
+					<img src="img/settings.png" class="icon">
+					<span class="title">Settings</span>
+					<hr>
+					<b>Reminder: </b>
+					<select>
+						<option>All</option>
+						<option>Only new article</option>
+					</select>
+					<input type="submit" value="Save" class="btn">
+				</p>
+			</div>
+		</div>
+		<footer>
+			<div class="query" onclick="open_query_form()">
+				Help<hr class="query_hr">
+				Ask a question
+			</div>
+			<div class="query_form">
+				<p>
+					<h3 class="sous_titre">How can I help?</h3>
+				</p>
+				<form action="contact.html">
+						<input type="text" placeholder="Full name" required>
+						<br>
+						<input type="text" placeholder="Company" required>
+						<br>
+						<input type="tel" placeholder="Phone number" required>
+						<br>
+						<input type="email" placeholder="E-mail" required>
+						<br>
+						<input type="text" class="large_field" placeholder="Question here ..." required>
+						<p>
+							<input type="submit" value="SEND" class="reverse_btn">
+							<span class="reverse_link right" onclick="close_query_form()">Close</span>
+						</p>
+				</form>
+			</div>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script>
+			if(sessionStorage.getItem("status") !== "connected") {
+				window.location.replace("forbidden.html");
+			}
+		</script>
+		<script type="text/javascript" src="modif.js"></script>
+		<script type="text/javascript" src="js.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    </body>
+</html>

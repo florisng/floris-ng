@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Floris Ng - Contact</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img/pp.jpg" />
+	</head>
+	<body>
+		<div id="header">
+			<div class="pp">
+				<img src="img/pp.png" class="pic">
+			</div>
+			<div class="big_menu">
+				<nav>
+					<div class="dropdown">
+						<img src="img/home_icon.jpg" class="icon">
+						<button class="dropbtn">HOME<img src="img/list.png" class="very_small push_left"></button>
+						<div class="dropdown-content">
+						  <a href="index.html#skills" title="Skills">SKILLS</a>
+						  <a href="index.html#exp" title="Projects">PROJECTS</a>
+						  <a href="index.html#contacts" title="Contacts">CONTACTS</a>
+						</div>
+					</div>
+					<script>
+						document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+						if(sessionStorage.getItem("status") === "connected") {
+							document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='profil_pic'></a></div>");
+							document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+							if(sessionStorage.getItem("type") === "admin") {
+								document.write("<div title='Administrator'><a href='admin.html' class='other_link'><img src='img/admin.png' class='icon'></a></div>");
+							}
+						}
+						else{
+							document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+							document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+						}
+					</script>
+				</nav>
+			</div>
+			<div class="open_close_space">
+				<img src="img/open_menu_icon.png" class="open_menu_icon open_close" onclick="open_menu()">
+				<img src="img/close_menu_icon.png" class="close_menu_icon open_close" onclick="close_menu()">
+			</div>
+		</div>
+		<div class="small_menu">
+			<nav>
+				<a class="home" onclick="open_show()">
+					<img src="img/home_icon.jpg" class="icon">
+					HOME
+					<img src="img/up.png" class="up very_small right">
+					<img src="img/down.png" class="down very_small right">
+				</a>
+				<div class="show">
+					<a href="index.html#skills">
+						<img src="img/skill.png" class="icon">
+						SKILLS
+					</a>
+					<a href="index.html#exp">
+						<img src="img/pro.png" class="icon">
+						PROJECTS
+					</a>
+					<a href="index.html#contacts">
+						<img src="img/contacts.png" class="icon">
+						CONTACT
+					</a>
+				</div>
+				<script>
+					document.write("<div title='Articles'><a href='articles.html' class='other_link'><img src='img/article_icon.png' class='icon'>ARTICLES</a></div>");
+					if(sessionStorage.getItem("status") === "connected") {
+						document.write("<div title='My profil'><a href='profil.html' class='other_link'><img src='img/user_profil.png' class='icon'>My Profil</a></div>");
+						document.write("<div title='Log out'><a href='logout.html' class='other_link'><img src='img/logout.png' class='icon'></a></div>");
+					}
+					else{
+						document.write("<div title='Sign Up'><a href='signup.html' class='other_link'><img src='img/signup.png' class='icon'>Create an account</a></div>");
+						document.write("<div title='Sign In'><a href='signin.html' class='signin'>SIGN IN</a></div>");
+					}
+				</script>
+			</nav>
+		</div>
+		<div class="contact">
+                <h1>How can i help?</h1>
+				<img src="img/help.png" class="side">
+				<p>
+					<input type="text" id="firstname" placeholder="Firstname">
+                	<input type="text" id="lastname" placeholder="Lastname">
+				</p>
+				<p>
+					<input type="tel" id="phone" placeholder="Phone number">
+                    <input type="email" id="email" placeholder="E-mail">
+				</p>
+				<textarea id="message" placeholder="Your question or message here ..."></textarea>
+                <p>
+                    <button class="btn" onclick="save_message()">SEND</button>
+                </p>
+		</div>
+		<div id="signedinup" class="center">
+			<img src="img/sent.gif" class="ok_gif">
+			<h1>MESSAGE SENT !!!</h1>
+		</div>
+		<footer>
+			<div class="center">
+				<img src="img/copyright.jpg" class="copyright"> Floris Ng 2020
+			</div>
+		</footer>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+		<script>
+		// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyDzNGaESF4A8DbMKZyg1WuvmBB62x5_-To",
+				authDomain: "floris-ng.firebaseapp.com",
+				databaseURL: "https://floris-ng.firebaseio.com",
+				projectId: "floris-ng",
+				storageBucket: "floris-ng.appspot.com",
+				messagingSenderId: "667336396068",
+				appId: "1:667336396068:web:8398065c7ae3d8ab50f7b1",
+				measurementId: "G-G1MQMC21Y7"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+
+			function save_message(){
+				let firstname = document.querySelector("#firstname").value;
+				let lastname= document.querySelector("#lastname").value;
+				let phone = document.querySelector("#phone").value;
+				let email = document.querySelector("#email").value;
+				let message = document.querySelector("#message").value;
+				// let ref = firebase.database().ref("messages");
+				// let data = {
+				// 	firstname:  firstname,
+				// 	lastname:  lastname,
+				// 	phone: phone,
+				// 	email: email,
+				// 	message: message,
+				// 	date: daterEn()
+				// }
+				// ref.push(data);
+
+											let id = Math.floor(Math.random() * 10000);
+                                            let data = {
+                                                firstname: firstname,
+                                                lastname: lastname,
+                                                phone: phone,
+                                                email: email,
+												message: message,
+												date: daterEn()
+                                            }
+                                            firebase.database().ref("messages/" + id).set(data);
+
+				document.querySelector(".contact").style.display = "none";
+            	document.querySelector("#signedinup").style.display = "block";
+			}
+		</script>
+		<script type="text/javascript" src="js.js"></script>
+    </body>
+</html>
